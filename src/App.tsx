@@ -22,9 +22,15 @@ function App() {
       <Header />
       <div className="card">
         <div style={{ color: "green", fontSize: "20px", fontWeight: 700 }}>
-          Hello: {text}
+          Hello {text}
         </div>
-        <Button onClickProps={() => handleText('John')}>
+        <input
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Insert your name"
+        />
+        <Button onClickProps={() => handleText("John")}>
           Change text to Hello John
         </Button>
         <Button onClickProps={() => handleText("Jane")}>
